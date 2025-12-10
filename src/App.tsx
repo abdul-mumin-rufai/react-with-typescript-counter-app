@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Button from './Button';
 
 function App() {
   type Status = "idle" | "loading" | "success";
@@ -12,14 +13,16 @@ function App() {
       <h2>
         count is {count}
       </h2>
+      <Button action={"decrease"} />
+      <Button action={"increase"} />
 
       <br /><br />
       <button onClick={() => setStatus("loading")}>Set Loading</button>
       {status == "loading" &&
         <p>Loading...</p>
-      
+
       }
-          
+
     </>
   )
 }
