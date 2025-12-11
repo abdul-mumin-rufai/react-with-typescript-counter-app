@@ -1,5 +1,8 @@
+import type { Action } from './App.tsx';
+
+
 interface Props {
-    action: "decrease" | "increase"
+    action:Action 
 }
 
 function Button({ action }: Props) {
