@@ -3,15 +3,15 @@ import './App.css'
 import Button from './Button';
 
 export type Action = "decrease" | "increase";
-type Status = "idle" | "loading" | "success";
+//type Status = "idle" | "loading" | "success";
 
 
 function App() {
 
   const [count, setCount] = useState(0);
-  const [status, setStatus] = useState<Status>("idle");  //type annotation
+  //const [status, setStatus] = useState<Status>("idle");  //type annotation
 
-  function handleUpdate(action: Action) {
+  function updateCount(action: Action) {
     if (action == "increase") {
       setCount(count + 1)
     } else if (action == "decrease") {
@@ -26,15 +26,14 @@ function App() {
       <h2>
         count is {count}
       </h2>
-      <Button action={"decrease"} />
-      <Button action={"increase"} />
+      <Button action={"decrease"} clickHandler={updateCount } />
+      <Button action={"increase"} clickHandler={updateCount} />
 
-      <br /><br />
+     {/*  <br /><br />
       <button onClick={() => setStatus("loading")}>Set Loading</button>
       {status == "loading" &&
         <p>Loading...</p>
-
-      }
+      } */}
 
     </>
   )
