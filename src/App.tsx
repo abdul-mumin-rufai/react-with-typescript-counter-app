@@ -4,8 +4,6 @@ import Button from './Button';
 
 export type Action = "decrease" | "increase";
 //type Status = "idle" | "loading" | "success";
-
-
 function App() {
 
   const [count, setCount] = useState(0);
