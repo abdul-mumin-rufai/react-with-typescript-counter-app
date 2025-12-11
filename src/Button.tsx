@@ -2,14 +2,15 @@ import type { Action } from './App.tsx';
 
 
 interface Props {
-    action:Action 
+    action: Action, 
+    clickHandler: (action: Action) => void;
 }
 
-function Button({ action }: Props) {
+function Button({ action, clickHandler }: Props) {
 
     return (
         <>
-            <button>
+            <button onClick={() => { clickHandler(action)}}>
                 {action}
             </button>
 
